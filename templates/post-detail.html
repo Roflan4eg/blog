@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block body %}
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal text-body-emphasis">{{ article.title }}</h1><p><b>Дата: {{ article.date.date() }}</b></p>
+      <div class="text-md-start lh-sm text-break">
+        <h2>{{ article.intro }}</h2><br>
+        <h3>{{ article.text }}</h3>
+      </div>
+      <a href="/posts/{{ article.id }}/del" class="btn btn-danger">Удалить статью</a>
+      <a href="/posts/{{ article.id }}/update" class="btn btn-warning">Редактировать статью</a>
+
+
+
+  </div>
+{% endblock %}
